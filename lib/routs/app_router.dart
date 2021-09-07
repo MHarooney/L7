@@ -1,10 +1,11 @@
-import 'package:l7/screens/home/home_screen.dart';
+import 'package:l7/screens/home/view/home_screen.dart';
+import 'package:l7/screens/main/view/main_screen.dart';
 import 'package:l7/screens/not_found_screen/NotFoundScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'RoutingData.dart';
-import 'RoutsNames.dart';
+import 'routing_data.dart';
+import 'routs_names.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -18,8 +19,8 @@ class AppRouter {
     switch (routingData.route) {
       // case RouteName.SPLASH:
       //   return _getPageRoute(SplashScreen(), settings);
-      //   case RouteName.ON_BOARDING:
-      //   return _getPageRoute(OnBoardingScreen(), settings);
+        case RouteName.MAIN:
+        return _getPageRoute(MainScreen(), settings);
       case RouteName.HOME:
         return _getPageRoute(HomeScreen(), settings);
       // case RouteName.SETTINGS:

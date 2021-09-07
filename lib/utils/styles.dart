@@ -1,7 +1,7 @@
 import 'package:l7/utils/themes.dart';
 import 'package:flutter/material.dart';
 
-import 'Colors.dart';
+import 'colors.dart';
 
 const TextStyle logoStyle =
     TextStyle(color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.bold);
@@ -42,7 +42,7 @@ final Decoration? defaultBorderDecoration = BoxDecoration(
 
 final Decoration? defaultDarkBorderDecoration = BoxDecoration(
   border: Border.all(color: borderColor),
-  color: lightBlackBackGroundColor,
+  color: blackColor,
   borderRadius: BorderRadius.vertical(
       top: Radius.circular(8.0), bottom: Radius.circular(5.0)),
 );

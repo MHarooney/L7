@@ -1,5 +1,5 @@
-import 'package:l7/utils/Colors.dart';
-import 'package:l7/utils/Texts.dart';
+import 'package:l7/utils/colors.dart';
+import 'package:l7/utils/texts.dart';
 import 'package:flutter/material.dart';
 
 class StyledButton extends StatelessWidget {

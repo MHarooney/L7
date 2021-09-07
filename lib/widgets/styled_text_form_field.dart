@@ -1,4 +1,4 @@
-import 'package:l7/utils/Styles.dart';
+import 'package:l7/utils/styles.dart';
 import 'package:l7/utils/themes.dart';
 import 'package:flutter/material.dart';
 

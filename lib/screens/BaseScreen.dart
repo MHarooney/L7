@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../Locator.dart';
+import '../../locator.dart';
 import 'BaseViewModel.dart';
 
 class BaseScreen<T extends BaseViewModel> extends StatefulWidget {

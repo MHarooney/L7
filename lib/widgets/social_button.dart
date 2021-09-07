@@ -1,5 +1,5 @@
-import 'package:l7/utils/CommonFunctions.dart';
-import 'package:l7/utils/Texts.dart';
+import 'package:l7/utils/common_funtions.dart';
+import 'package:l7/utils/texts.dart';
 import 'package:flutter/material.dart';
 
 class SocialButton extends StatelessWidget {

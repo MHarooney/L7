@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'Colors.dart';
+import 'colors.dart';
 
 
 const defaultColor = Colors.cyan;
@@ -10,7 +10,7 @@ String? _fontFamily;
 
 ThemeData darkTheme = ThemeData(
   primarySwatch: defaultColor,
-  scaffoldBackgroundColor: defaultBackGroundColor,
+  scaffoldBackgroundColor: whiteColor,
   tabBarTheme: TabBarTheme(
 
   ),
