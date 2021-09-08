@@ -13,29 +13,26 @@ class SideMenu extends StatelessWidget {
       onModelReady: (mainViewModel){},
       builder: (context, viewModel, _){
         return Drawer(
-          child: Container(
-            color: kDarkBlackColor,
-            child: ListView(
-              children: [
-                DrawerHeader(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: kDefaultPadding * 3.5),
-                    child: Image.asset("assets/images/logo.png"),
-                  ),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: kDefaultPadding * 3.5),
+                  child: Image.asset("assets/images/l7_image_drawer_view.png"),
                 ),
-                ...List.generate(
-                  viewModel.menuItems.length,
-                      (index) => DrawerItem(
-                    isActive: index == viewModel.selectedIndex,
-                    title: viewModel.menuItems[index],
-                    press: () {
-                      viewModel.setMenuIndex(index);
-                    },
-                  ),
+              ),
+              ...List.generate(
+                viewModel.menuItems.length,
+                    (index) => DrawerItem(
+                  isActive: index == viewModel.selectedIndex,
+                  title: viewModel.menuItems[index],
+                  press: () {
+                    viewModel.setMenuIndex(index);
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },
@@ -65,7 +62,7 @@ class DrawerItem extends StatelessWidget {
         onTap: press,
         title: Text(
           title!,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: kBlackBlue),
         ),
       ),
     );

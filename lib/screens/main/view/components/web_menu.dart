@@ -70,7 +70,7 @@ class WebMenuItem extends StatelessWidget {
         child: Text(
           text!,
           style: TextStyle(
-            color: Colors.white,
+            color: kBlackBlue,
             fontWeight: isActive! ? FontWeight.w600 : FontWeight.normal,
           ),
         ),

@@ -1,9 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:l7/screens/BaseScreen.dart';
 import 'package:l7/screens/main/view/components/web_menu.dart';
 import 'package:l7/screens/main/view_model/main_view_model.dart';
 import 'package:l7/services/responsive.dart';
 import 'package:l7/utils/constants.dart';
+import 'package:l7/utils/texts.dart';
+
+import 'header_right_side.dart';
 
 class Header extends StatelessWidget {
 
@@ -12,87 +16,94 @@ class Header extends StatelessWidget {
     return BaseScreen<MainViewModel>(
       onModelReady: (mainViewModel) {},
       builder: (context, viewModel, _) {
-        return Container(
-          width: double.infinity,
-          color: kDarkBlackColor,
-          child: SafeArea(
-            child: Column(
-              children: [
-                Container(
-                  constraints: BoxConstraints(maxWidth: kMaxWidth),
-                  padding: EdgeInsets.all(kDefaultPadding),
-                  child: Column(
+        return SafeArea(
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          if (!Responsive.isDesktop(context))
-                            IconButton(
-                              icon: Icon(
-                                Icons.menu,
-                                color: Colors.white,
-                              ),
-                              onPressed: () {
-                                Scaffold.of(context).openDrawer();
-                              },
-                            ),
-                          Image.asset("assets/images/logo.png", height: MediaQuery.of(context).size.height * 0.1,),
-                          Spacer(),
-                          if (Responsive.isDesktop(context)) WebMenu(),
-                          // Spacer(),
-                          // // Socal
-                          // Socal(),
-                        ],
-                      ),
-                      SizedBox(height: kDefaultPadding * 2),
-                      Text(
-                        "Welcome to Our Blog",
-                        style: TextStyle(
-                          fontSize: 32,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                        const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                        child: Text(
-                          "Stay updated with the newest design and development stories, case studies, \nand insights shared by DesignDK Team.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Raleway',
-                            height: 1.5,
+                      if (!Responsive.isDesktop(context))
+                        IconButton(
+                          icon: Icon(
+                            Icons.menu,
+                            color: kBlackBlue,
                           ),
+                          onPressed: () {
+                            Scaffold.of(context).openDrawer();
+                          },
                         ),
-                      ),
-                      FittedBox(
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Row(
+                      Image.asset("assets/images/l7_image.png", height: MediaQuery.of(context).size.height * 0.15,),
+                      Spacer(),
+                      if (Responsive.isDesktop(context)) WebMenu(),
+                      Spacer(),
+                      // // Socal
+                      HeaderRightSide(),
+                    ],
+                  ),
+                  // SizedBox(height: kDefaultPadding * 2),
+                  Container(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * 0.27,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage('assets/images/blog_bg.png'), fit: BoxFit.cover)
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                "Learn More",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                              headLine30TitleText(
+                                tr("Welcome to Our Blog"),
+                                context,
+                              ),
+                              Padding(
+                                padding:
+                                const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                                child: Text(
+                                  "Stay updated with the newest design and development stories, case studies, \nand insights shared by DesignDK Team.",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Raleway',
+                                    height: 1.5,
+                                  ),
                                 ),
                               ),
-                              SizedBox(width: kDefaultPadding / 2),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: Colors.white,
+                              FittedBox(
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "Learn More",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      SizedBox(width: kDefaultPadding / 2),
+                                      Icon(
+                                        Icons.arrow_forward,
+                                        color: Colors.white,
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
                             ],
                           ),
                         ),
-                      ),
-                      if (Responsive.isDesktop(context))
-                        SizedBox(height: kDefaultPadding),
-                    ],
+                        IconButton(onPressed: (){}, icon: Icon(Icons.keyboard_arrow_right, color: Colors.white,))
+                      ],
+                    ),
                   ),
-                )
-              ],
-            ),
+                  if (Responsive.isDesktop(context))
+                    SizedBox(height: kDefaultPadding),
+                ],
+              )
+            ],
           ),
         );
       },

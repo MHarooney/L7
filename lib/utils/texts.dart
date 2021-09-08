@@ -44,7 +44,7 @@ Widget titleText(String header, BuildContext? context,
   );
 }
 
-Widget headLine18TitleTextGold(String header, BuildContext? context,
+Widget headLine30TitleText(String header, BuildContext? context,
     {TextStyle? style}) {
   return Text(
     header,

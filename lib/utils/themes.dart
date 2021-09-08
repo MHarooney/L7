@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:l7/utils/constants.dart';
 
 import 'colors.dart';
 
 
-const defaultColor = Colors.cyan;
+const defaultColor = Colors.deepOrange;
 const goldDefaultColor = Color(0xFFE6CC51);
 String? _fontFamily;
 
@@ -25,12 +26,12 @@ ThemeData darkTheme = ThemeData(
     elevation: 0.0,
     titleTextStyle: TextStyle(
       fontFamily: 'Jannah',
-      color: Colors.white,
+      color: kBlackBlue,
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
     ),
     iconTheme: IconThemeData(
-      color: Colors.white,
+      color: kBlackBlue,
     ),
   ),
   dividerTheme: DividerThemeData(
@@ -68,9 +69,9 @@ ThemeData darkTheme = ThemeData(
       height: 1.28
     ),
     headline2: TextStyle(
-        fontSize: 18.0,
+        fontSize: 30.0,
         fontWeight: FontWeight.bold,
-        color: goldDefaultColor,
+        color: Colors.white,
         height: 1.28
     ),
     headline3: TextStyle(
