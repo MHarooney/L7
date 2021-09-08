@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:l7/locator.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'nonweb_url_strategy.dart'
+    if (dart.library.html) 'web_url_strategy.dart';
 import 'package:l7/routs/app_router.dart';
 import 'package:l7/routs/routs_names.dart';
 import 'package:l7/screens/home/view/home_screen.dart';
@@ -33,7 +34,7 @@ void main() async {
 }
 
 Future configureApp() async {
-  setUrlStrategy(PathUrlStrategy());
+  configureUrl();
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
