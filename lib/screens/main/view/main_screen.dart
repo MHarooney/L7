@@ -35,28 +35,38 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Header(),
-                  DraggableScrollableSheet(
-                    builder: (BuildContext context,
-                            ScrollController scrollController) =>
-                        NestedScrollView(
-                      controller: scrollController,
-                      headerSliverBuilder:
-                          (BuildContext context, bool innerBoxIsScrolled) => [
-                        SliverToBoxAdapter(
-                          child: IntroMainScreenWidget(),
-                        ),
-                      ],
-                      body: CustomScrollView(
-                        slivers: [
-                          SliverList(
-                            delegate: SliverChildBuilderDelegate(
-                              (context, index) => Column(
-                                children: [
-                                  HomeScreen(),
-                                ],
-                              ),
-                            ),
-                          ),
+                  // DraggableScrollableSheet(
+                  //   builder: (BuildContext context,
+                  //           ScrollController scrollController) =>
+                  //       NestedScrollView(
+                  //     controller: scrollController,
+                  //     headerSliverBuilder:
+                  //         (BuildContext context, bool innerBoxIsScrolled) => [
+                  //       SliverToBoxAdapter(
+                  //         child: IntroMainScreenWidget(),
+                  //       ),
+                  //     ],
+                  //     body: CustomScrollView(
+                  //       slivers: [
+                  //         SliverList(
+                  //           delegate: SliverChildBuilderDelegate(
+                  //             (context, index) => Column(
+                  //               children: [
+                  //                 HomeScreen(),
+                  //               ],
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          IntroMainScreenWidget(),
+                          HomeScreen(),
                         ],
                       ),
                     ),
