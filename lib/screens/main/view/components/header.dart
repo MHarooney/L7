@@ -48,53 +48,6 @@ class Header extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: kDefaultPadding * 2),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  color: Colors.black.withOpacity(0.35),
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      largeText(
-                        tr('welcome_to_our_blog'),
-                        context,
-                        mobileFontSize: 30,
-                        webTextColor: Colors.white,
-                        mobileTextColor: Colors.white
-                      ),
-                      Padding(
-                        padding:
-                        const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                        child: smallText(
-                          tr('blog_intro'),
-                          context,
-                          textColor: Colors.white,
-                        ),
-                      ),
-                      FittedBox(
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Row(
-                            children: [
-                              mediumText(
-                                tr('learn_more'),
-                                context,
-                              ),
-                              SizedBox(width: kDefaultPadding / 2),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: Colors.white,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                if (Responsive.isDesktop(context))
-                  SizedBox(height: kDefaultPadding),
               ],
             ),
           ),

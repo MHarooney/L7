@@ -7,5 +7,4 @@ import '../../BaseViewModel.dart';
 class HomeViewModel extends BaseViewModel {
   void signOut() {}
 
-
 }

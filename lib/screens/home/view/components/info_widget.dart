@@ -93,7 +93,7 @@ class InfosPart extends StatelessWidget {
                 ? const EdgeInsets.symmetric(horizontal: 200)
                 : const EdgeInsets.all(0),
             child: largeText(
-              'Custom Software Development Company Serving Start-ups to Fortune 500',
+              tr('company_desc'),
               context,
             ),
           ),

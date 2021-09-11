@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:l7/screens/home/view/home_screen.dart';
 import 'package:l7/screens/main/view_model/main_view_model.dart';
-import 'package:l7/utils/constants.dart';
 
 import '../../BaseScreen.dart';
 import 'components/header.dart';
+import 'components/intro_main_screen_widget.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
-  // final MenuController _controller = Get.put(MenuController());
   @override
   Widget build(BuildContext context) {
     return BaseScreen<MainViewModel>(
       onModelReady: (mainViewModel) {},
+      onFinish: (mainViewModel) {},
       builder: (context, viewModel, _) {
         return Container(
           decoration: BoxDecoration(
@@ -35,12 +35,28 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Header(),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
-                      child: Column(
-                        children: [
-                          HomeScreen(),
+                  DraggableScrollableSheet(
+                    builder: (BuildContext context,
+                            ScrollController scrollController) =>
+                        NestedScrollView(
+                      controller: scrollController,
+                      headerSliverBuilder:
+                          (BuildContext context, bool innerBoxIsScrolled) => [
+                        SliverToBoxAdapter(
+                          child: IntroMainScreenWidget(),
+                        ),
+                      ],
+                      body: CustomScrollView(
+                        slivers: [
+                          SliverList(
+                            delegate: SliverChildBuilderDelegate(
+                              (context, index) => Column(
+                                children: [
+                                  HomeScreen(),
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -54,3 +70,15 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+
+// IntroMainScreenWidget(),
+// Expanded(
+//   child: SingleChildScrollView(
+//     physics: BouncingScrollPhysics(),
+//     child: Column(
+//       children: [
+//         HomeScreen(),
+//       ],
+//     ),
+//   ),
+// ),

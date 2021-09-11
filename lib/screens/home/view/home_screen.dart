@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:l7/screens/BaseScreen.dart';
 import 'package:l7/screens/home/viewmodel/home_view_model.dart';
-import 'package:l7/services/responsive.dart';
-import 'package:l7/utils/constants.dart';
 
 import 'components/info_widget.dart';
 

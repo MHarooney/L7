@@ -7,6 +7,8 @@ class MainViewModel extends BaseViewModel {
   int _selectedIndex = 0;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  ScrollController? scrollController;
+
   int get selectedIndex => _selectedIndex;
   List<String> get menuItems =>
       [tr('services'), tr('technologies'), tr('portfolio'), tr('about')];
