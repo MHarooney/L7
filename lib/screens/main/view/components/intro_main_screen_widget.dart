@@ -11,7 +11,6 @@ class IntroMainScreenWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-
         SizedBox(height: kDefaultPadding * 2),
         Container(
           padding: EdgeInsets.symmetric(vertical: 15),
@@ -20,16 +19,12 @@ class IntroMainScreenWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              largeText(
-                  tr('welcome_to_our_blog'),
-                  context,
+              largeText(tr('welcome_to_our_blog'), context,
                   mobileFontSize: 30,
                   webTextColor: Colors.white,
-                  mobileTextColor: Colors.white
-              ),
+                  mobileTextColor: Colors.white),
               Padding(
-                padding:
-                const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
                 child: smallText(
                   tr('blog_intro'),
                   context,
@@ -57,8 +52,8 @@ class IntroMainScreenWidget extends StatelessWidget {
             ],
           ),
         ),
-        if (Responsive.isDesktop(context))
-          SizedBox(height: kDefaultPadding),
+        // if (Responsive.isDesktop(context))
+        SizedBox(height: kDefaultPadding),
       ],
     );
   }

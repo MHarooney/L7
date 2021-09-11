@@ -5,15 +5,10 @@ import 'nonweb_url_strategy.dart'
     if (dart.library.html) 'web_url_strategy.dart';
 import 'package:l7/routs/app_router.dart';
 import 'package:l7/routs/routs_names.dart';
-import 'package:l7/screens/home/view/home_screen.dart';
 import 'package:l7/services/navigation_service.dart';
 import 'package:l7/utils/themes.dart';
 import 'package:easy_localization/easy_localization.dart';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'utils/colors.dart';
 
 void main() async {
   await configureApp();

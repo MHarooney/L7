@@ -66,6 +66,7 @@ class MainScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           IntroMainScreenWidget(),
+                          // SizedBox(height: 20,),
                           HomeScreen(),
                         ],
                       ),
