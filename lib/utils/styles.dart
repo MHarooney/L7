@@ -7,12 +7,12 @@ const TextStyle logoStyle =
     TextStyle(color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.bold);
 
 const TextStyle smallStyle = TextStyle(
-  color: goldDefaultColor,
+  color: blackDefaultColor,
   fontSize: 14.0,
 );
 
 const TextStyle textFieldTextStyle = TextStyle(
-  color: goldDefaultColor,
+  color: blackDefaultColor,
   fontSize: 14.0,
 );
 

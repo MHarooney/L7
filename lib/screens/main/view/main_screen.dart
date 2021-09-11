@@ -12,21 +12,41 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen<MainViewModel>(
-      onModelReady: (mainViewModel){},
+      onModelReady: (mainViewModel) {},
       builder: (context, viewModel, _) {
-        return Scaffold(
-          key: viewModel.scaffoldKey,
-          drawer: SideMenu(),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Header(),
-                // Container(
-                //   padding: EdgeInsets.all(kDefaultPadding),
-                //   constraints: BoxConstraints(maxWidth: kMaxWidth),
-                //   child: SafeArea(child: HomeScreen()),
-                // ),
-              ],
+        return Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/blog_bg.png"),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            key: viewModel.scaffoldKey,
+            drawer: Theme(
+              data: Theme.of(context)
+                  .copyWith(canvasColor: Colors.white.withOpacity(0.6)),
+              child: SideMenu(),
+            ),
+            body: Container(
+              color: Colors.black.withOpacity(0.35),
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                children: [
+                  Header(),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      physics: BouncingScrollPhysics(),
+                      child: Column(
+                        children: [
+                          HomeScreen(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );

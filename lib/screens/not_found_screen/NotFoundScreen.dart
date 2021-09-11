@@ -1,5 +1,8 @@
+import 'dart:js';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:l7/utils/texts.dart';
 
 class NotFoundScreen extends StatelessWidget {
   const NotFoundScreen({Key? key}) : super(key: key);
@@ -9,7 +12,10 @@ class NotFoundScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text(tr('no_page')),
+          child: mediumText(
+            tr('no_page'),
+            context,
+          ),
         ),
       ),
     );

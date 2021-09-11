@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:l7/services/responsive.dart';
 import 'package:l7/utils/constants.dart';
+import 'package:l7/utils/texts.dart';
 
 class HeaderRightSide extends StatelessWidget {
   const HeaderRightSide({
@@ -13,28 +15,36 @@ class HeaderRightSide extends StatelessWidget {
     return Row(
       children: [
         if (!Responsive.isMobile(context))
-          IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.facebook,color: kBlackBlue,)),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                FontAwesomeIcons.facebook,
+                color: Colors.white,
+              )),
         if (!Responsive.isMobile(context))
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-            child: IconButton(onPressed: (){}, icon: Icon(Icons.language,color: kBlackBlue,)),
+            child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.language,
+                  color: Colors.white,
+                )),
           ),
-        // if (!Responsive.isMobile(context))
-        //   SvgPicture.asset("assets/icons/feather_twitter.svg"),
         SizedBox(width: kDefaultPadding),
-        Padding(
-          padding: const EdgeInsets.only(right: 10.0),
-          child: ElevatedButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.symmetric(
-                horizontal: kDefaultPadding * 1.5,
-                vertical:
-                    kDefaultPadding / (Responsive.isDesktop(context) ? 1 : 2),
-              ),
+        ElevatedButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.symmetric(
+              horizontal: kDefaultPadding * 1.5,
+              vertical:
+                  kDefaultPadding / (Responsive.isDesktop(context) ? 1 : 2),
             ),
-            child: Text("Let's Talk"),
+          ),
+          child: mediumText(
+            tr('contact'),
+            context,
           ),
         ),
       ],

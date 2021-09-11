@@ -5,8 +5,8 @@ import 'package:l7/utils/constants.dart';
 import 'colors.dart';
 
 
-const defaultColor = Colors.deepOrange;
-const goldDefaultColor = Color(0xFFE6CC51);
+const defaultColor = Colors.orange;
+const blackDefaultColor = Color(0xFF000000);
 String? _fontFamily;
 
 ThemeData darkTheme = ThemeData(
@@ -47,8 +47,8 @@ ThemeData darkTheme = ThemeData(
   textTheme: TextTheme(
     bodyText1: TextStyle(
       fontSize: 14.0,
-      fontWeight: FontWeight.bold,
-      color: Colors.white,
+      fontWeight: FontWeight.normal,
+      color: kBlackBlue,
     ),
     subtitle1: TextStyle(
       fontSize: 11.0,
@@ -59,19 +59,19 @@ ThemeData darkTheme = ThemeData(
     subtitle2: TextStyle(
       fontSize: 11.0,
       fontWeight: FontWeight.w400,
-      color: goldDefaultColor,
+      color: kBlackBlue,
       height: 1.28,
     ),
     headline1: TextStyle(
-      fontSize: 10.0,
-      fontWeight: FontWeight.normal,
-      color: Colors.white,
+      fontSize: 20.0,
+      fontWeight: FontWeight.bold,
+      color: kBlackBlue,
       height: 1.28
     ),
     headline2: TextStyle(
-        fontSize: 30.0,
+        fontSize: 40.0,
         fontWeight: FontWeight.bold,
-        color: Colors.white,
+        color: kBlackBlue,
         height: 1.28
     ),
     headline3: TextStyle(
@@ -83,14 +83,14 @@ ThemeData darkTheme = ThemeData(
     bodyText2: TextStyle(
         fontSize: 14.0,
         fontWeight: FontWeight.normal,
-        color: goldDefaultColor,
+        color: kBlackBlue,
         height: 1.28
     ),
     button: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
         fontFamily: 'Jannah',
-        color: goldDefaultColor,
+        color: kBlackBlue,
         height: 1.28
     ),
   ),

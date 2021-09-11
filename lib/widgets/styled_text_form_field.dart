@@ -40,11 +40,11 @@ class StyledTextField extends StatelessWidget {
         labelStyle: smallStyle,
         prefixIcon: Icon(
           prefix,
-          color: goldDefaultColor,
+          color: blackDefaultColor,
         ),
         suffixIcon: suffix != null
             ? IconButton(
-          color: goldDefaultColor,
+          color: blackDefaultColor,
           onPressed: suffixPressed,
           icon: Icon(
             suffix,
