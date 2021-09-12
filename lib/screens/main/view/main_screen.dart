@@ -35,43 +35,54 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Header(),
-                  // DraggableScrollableSheet(
-                  //   builder: (BuildContext context,
-                  //           ScrollController scrollController) =>
-                  //       NestedScrollView(
-                  //     controller: scrollController,
-                  //     headerSliverBuilder:
-                  //         (BuildContext context, bool innerBoxIsScrolled) => [
-                  //       SliverToBoxAdapter(
-                  //         child: IntroMainScreenWidget(),
-                  //       ),
-                  //     ],
-                  //     body: CustomScrollView(
-                  //       slivers: [
-                  //         SliverList(
-                  //           delegate: SliverChildBuilderDelegate(
-                  //             (context, index) => Column(
-                  //               children: [
-                  //                 HomeScreen(),
-                  //               ],
-                  //             ),
-                  //           ),
-                  //         ),
+                  Expanded(
+                    /// you may have good reason to use [DraggableScrollableSheet] but i prefer alternative in this case.
+                    /// I think we dont need to use [NestedScrollView] and [CustomScrollView] both at the same time
+                    /// I'm not aware of UX and it's not ok to comment but may help you, 
+                    child: DraggableScrollableSheet(
+                      // expand: false,
+                      builder: (
+                        BuildContext context,
+                        ScrollController scrollController,
+                      ) =>
+                          NestedScrollView(
+                        controller: scrollController,
+                        headerSliverBuilder:
+                            (BuildContext context, bool innerBoxIsScrolled) => [
+                          SliverToBoxAdapter(
+                            child: IntroMainScreenWidget(),
+                          ),
+                        ],
+                        body: CustomScrollView(
+                          slivers: [
+                            SliverList(
+                              delegate: SliverChildBuilderDelegate(
+                                (context, index) => Column(
+                                  children: [
+                                    HomeScreen(),
+                                    // IntroMainScreenWidget(),
+                                  ],
+                                ),
+                                // assign count while using builder or use [SliverChildListDelegate] instead [SliverChildBuilderDelegate]
+                                childCount: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Expanded(
+                  //   child: SingleChildScrollView(
+                  //     child: Column(
+                  //       children: [
+                  //         IntroMainScreenWidget(),
+                  //         // SizedBox(height: 20,),
+                  //         HomeScreen(),
                   //       ],
                   //     ),
                   //   ),
                   // ),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          IntroMainScreenWidget(),
-                          // SizedBox(height: 20,),
-                          HomeScreen(),
-                        ],
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
